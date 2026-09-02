@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="텅장수호자 서비스 이용약관">
+<title>텅장수호자 이용약관</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root{
+  --ground:#F5F7FA; --surface:#FFFFFF;
+  --ink:#191D26; --ink-2:#4C5464; --ink-3:#798396;
+  --accent:#2F5FD0; --accent-soft:#E8EEFC;
+  --rule:#E0E5EE; --rule-strong:#C8D0DE;
+  --fill-bg:#FFF0CC; --fill-ink:#7A5600; --fill-line:#E0BC6A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1117; --surface:#161A22;
+    --ink:#E7EAF1; --ink-2:#A7AFC0; --ink-3:#798296;
+    --accent:#8CAFFF; --accent-soft:#1A2231;
+    --rule:#252B37; --rule-strong:#38404F;
+    --fill-bg:#3B3013; --fill-ink:#EFD48D; --fill-line:#6B5620;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1117; --surface:#161A22;
+  --ink:#E7EAF1; --ink-2:#A7AFC0; --ink-3:#798296;
+  --accent:#8CAFFF; --accent-soft:#1A2231;
+  --rule:#252B37; --rule-strong:#38404F;
+  --fill-bg:#3B3013; --fill-ink:#EFD48D; --fill-line:#6B5620;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--ground); color:var(--ink);
+  font-family:'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;
+  font-size:15px; line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:45rem;margin:0 auto;padding:0 1.5rem 7rem}
+
+.draft{
+  background:var(--fill-bg); color:var(--fill-ink);
+  border:1px solid var(--fill-line); border-radius:4px;
+  padding:.85rem 1.05rem; margin:1.75rem 0 0;
+  font-size:.83rem; line-height:1.65;
+}
+.draft b{font-weight:700}
+
+header{padding:3.25rem 0 0}
+.eyebrow{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 .9rem;
+}
+h1{
+  font-family:'Gowun Batang','Batang',serif; font-weight:700;
+  font-size:clamp(2rem,6vw,2.75rem); line-height:1.25; letter-spacing:-.01em;
+  margin:0; text-wrap:balance;
+}
+.lede{color:var(--ink-2); margin:1rem 0 0; font-size:.95rem}
+.meta{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(9rem,1fr)); gap:1rem 1.5rem;
+  margin:2rem 0 0; padding:1.1rem 0 0; border-top:1px solid var(--rule-strong);
+}
+.meta div{display:flex; flex-direction:column; gap:.2rem}
+.meta dt{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin:0;
+}
+.meta dd{margin:0; font-size:.88rem; font-weight:500; font-variant-numeric:tabular-nums}
+
+.art{margin-top:2.9rem}
+.art h2{
+  font-family:'Gowun Batang','Batang',serif; font-weight:700;
+  font-size:1.2rem; line-height:1.5; margin:0 0 .2rem;
+  display:flex; gap:.75rem; align-items:baseline; flex-wrap:wrap;
+}
+.art h2 .num{
+  font-family:'IBM Plex Mono',ui-monospace,monospace; font-weight:500;
+  font-size:.78rem; letter-spacing:.04em; color:var(--accent); white-space:nowrap;
+}
+.art > p{color:var(--ink-2); margin:.7rem 0 0}
+
+ol.clauses{list-style:none; counter-reset:c; padding:0; margin:.85rem 0 0; display:flex; flex-direction:column; gap:.65rem}
+ol.clauses > li{counter-increment:c; position:relative; padding-left:1.7rem; color:var(--ink-2)}
+ol.clauses > li::before{
+  content:counter(c) "."; position:absolute; left:0; top:.02rem;
+  font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:.82rem; color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+ul.sub{list-style:hangul; padding-left:1.35rem; margin:.5rem 0 0; display:flex; flex-direction:column; gap:.3rem}
+ul.sub li{color:var(--ink-2)}
+ul.sub li::marker{font-size:.9em; color:var(--ink-3)}
+
+.callout{
+  background:var(--accent-soft); border:1px solid var(--rule); border-radius:4px;
+  padding:1rem 1.15rem; margin:1.1rem 0 0;
+}
+.callout .label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent);
+  display:block; margin-bottom:.45rem;
+}
+.callout p{margin:0; color:var(--ink-2); font-size:.9rem}
+
+.card{
+  background:var(--surface); border:1px solid var(--rule); border-radius:4px;
+  padding:1.2rem 1.3rem; margin:1rem 0 0;
+}
+.card dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:.55rem 1.1rem; font-size:.9rem}
+.card dt{color:var(--ink-3); font-size:.82rem; white-space:nowrap}
+.card dd{margin:0; color:var(--ink-2)}
+
+.fill{
+  background:var(--fill-bg); color:var(--fill-ink);
+  border-bottom:1px dashed var(--fill-line);
+  padding:.05em .35em; border-radius:2px; font-weight:500; font-size:.95em;
+}
+
+.docnav{margin-top:1.5rem}
+.docnav a{font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:.78rem; letter-spacing:.03em; text-decoration:none; border-bottom:1px solid var(--rule-strong); padding-bottom:.15rem}
+.docnav a:hover{border-bottom-color:var(--accent)}
+footer{margin-top:3.5rem; padding-top:1.4rem; border-top:1px solid var(--rule-strong)}
+footer h2{font-family:'Gowun Batang','Batang',serif; font-size:1rem; margin:0 0 .6rem}
+footer p{margin:0; color:var(--ink-2); font-size:.9rem}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<div class="draft">
+  <b>초안입니다.</b> 노란색으로 표시된 항목(<span class="fill">이렇게</span>)은 사업자등록증의 실제 값으로 채워야 하며, 시행 전 법률 검토를 권장합니다. 값을 알려주시면 채워서 다시 발행해 드립니다.
+</div>
+
+<header>
+  <p class="eyebrow">텅장수호자 · walletkeeper</p>
+  <h1>서비스 이용약관</h1>
+  <p class="lede">토스 앱 내 미니앱 &lsquo;텅장수호자&rsquo;의 이용 조건과 회사·이용자의 권리와 의무를 정한 문서입니다.</p>
+  <dl class="meta">
+    <div><dt>시행일</dt><dd>2026년 9월 2일</dd></div>
+    <div><dt>최종 개정일</dt><dd>2026년 9월 2일</dd></div>
+    <div><dt>버전</dt><dd>1.0</dd></div>
+  </dl>
+</header>
+
+<main>
+
+<section class="art">
+  <h2><span class="num">제1조</span> 목적</h2>
+  <p>이 약관은 윈코드_와이제이(이하 &ldquo;회사&rdquo;)이 토스 앱 내에서 제공하는 미니앱 &lsquo;텅장수호자&rsquo;(이하 &ldquo;서비스&rdquo;)의 이용과 관련하여 회사와 이용자의 권리·의무 및 책임사항을 규정하는 것을 목적으로 합니다.</p>
+</section>
+
+<section class="art">
+  <h2><span class="num">제2조</span> 용어의 정의</h2>
+  <ol class="clauses">
+    <li>&ldquo;서비스&rdquo;란 접속 기기나 방법과 관계없이 회사가 제공하는 텅장수호자 미니앱 및 관련 제반 서비스를 말합니다.</li>
+    <li>&ldquo;이용자&rdquo;란 이 약관에 동의하고 서비스를 이용하는 자를 말합니다.</li>
+    <li>&ldquo;토스로그인&rdquo;이란 주식회사 비바리퍼블리카가 제공하는 인증 수단으로, 이용자가 서비스에 로그인하는 방식을 말합니다.</li>
+    <li>&ldquo;기록&rdquo;이란 이용자가 서비스에 직접 입력한 소비 고민의 카테고리·금액과 그에 대한 선택 결과를 말합니다.</li>
+    <li>&ldquo;지킨 금액&rdquo;이란 이용자가 쓰지 않기를 선택한 기록의 금액을 합산해 표시하는 수치를 말하며, 실제 자산이나 예치금이 아닙니다.</li>
+    <li>&ldquo;아이템&rdquo;이란 서비스 이용 과정에서 이용자에게 무상으로 제공되는 시각적 요소를 말합니다.</li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제3조</span> 약관의 게시와 개정</h2>
+  <ol class="clauses">
+    <li>회사는 이 약관의 내용을 이용자가 쉽게 확인할 수 있도록 서비스 화면 또는 연결 화면에 게시합니다.</li>
+    <li>회사는 관련 법령을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.</li>
+    <li>약관을 개정하는 경우 적용일자와 개정 사유를 밝혀 적용일 7일 전부터 공지합니다. 다만 이용자에게 불리하게 개정하는 경우에는 적용일 30일 전부터 공지하고 이용자의 동의를 받습니다.</li>
+    <li>이용자는 개정 약관에 동의하지 않을 수 있으며, 이 경우 서비스 이용을 중단하고 이용계약을 해지할 수 있습니다.</li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제4조</span> 이용계약의 성립</h2>
+  <ol class="clauses">
+    <li>이용계약은 이용자가 이 약관에 동의하고 토스로그인을 통해 이용을 신청한 후 회사가 이를 승낙함으로써 성립합니다.</li>
+    <li>서비스는 만 19세 이상 이용자를 대상으로 하며, 회사는 만 14세 미만 아동의 개인정보를 수집하지 않습니다.</li>
+    <li>회사는 다음 각 호의 신청에 대하여 승낙을 거부하거나 사후에 이용계약을 해지할 수 있습니다.
+      <ul class="sub">
+        <li>타인의 명의나 정보를 도용한 경우</li>
+        <li>이 약관을 위반하여 이용이 제한된 이력이 있는 경우</li>
+        <li>기술적으로 서비스 제공이 불가능한 경우</li>
+      </ul>
+    </li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제5조</span> 서비스의 내용</h2>
+  <ol class="clauses">
+    <li>회사는 다음의 서비스를 제공합니다.
+      <ul class="sub">
+        <li>이용자가 직접 입력한 소비 고민을 기록으로 남기는 기능</li>
+        <li>기록에 따른 지킨 금액의 집계 및 표시</li>
+        <li>캐릭터의 반응 표시와 기록 누적에 따른 캐릭터 외형 변화</li>
+        <li>무료 아이템의 지급 및 보관</li>
+        <li>그 밖에 회사가 추가로 개발하여 제공하는 서비스</li>
+      </ul>
+    </li>
+    <li>서비스는 이용자가 직접 입력한 값만을 사용하며, 이용자의 어떤 선택도 옳고 그름으로 평가하거나 잘못된 선택으로 표시하지 않습니다.</li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제6조</span> 금융 서비스에 해당하지 않음</h2>
+  <ol class="clauses">
+    <li>서비스는 실제 자금의 이동·예치·송금·결제 기능을 제공하지 않으며, 이용자의 금융기관 계좌나 카드와 연동되지 않습니다.</li>
+    <li>서비스에 표시되는 지킨 금액은 이용자가 직접 입력한 값을 합산한 참고용 수치이며, 이용자가 회사에 청구하거나 인출할 수 있는 채권 또는 자산이 아닙니다.</li>
+    <li>서비스는 투자자문, 금융상품의 중개·판매, 신용정보의 제공 등 관련 법령상의 금융 서비스에 해당하지 않습니다.</li>
+  </ol>
+  <div class="callout">
+    <span class="label">확인해 주세요</span>
+    <p>서비스가 보여주는 내용은 재무적 판단에 대한 조언이 아닙니다. 이용자의 소비 및 재무 결정과 그 결과는 이용자에게 귀속됩니다.</p>
+  </div>
+</section>
+
+<section class="art">
+  <h2><span class="num">제7조</span> 아이템</h2>
+  <ol class="clauses">
+    <li>아이템은 전부 무상으로 제공되며, 회사는 아이템을 유상으로 판매하지 않습니다.</li>
+    <li>아이템은 현금 가치가 없고, 이용자 사이에 양도·교환·판매·환전할 수 없으며 환불의 대상이 되지 않습니다.</li>
+    <li>아이템을 많이 획득하더라도 캐릭터의 성장 속도에는 영향을 주지 않습니다.</li>
+    <li>회사는 운영상 필요한 경우 아이템의 종류·지급 방식·표시 방법을 변경할 수 있습니다.</li>
+    <li>아이템은 이용계약이 종료되거나 서비스가 종료되면 소멸하며, 무상으로 제공된 것이므로 회사는 별도의 보상을 하지 않습니다.</li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제8조</span> 경쟁 요소의 부존재</h2>
+  <p>서비스에는 점수·순위·승패 등 이용자 사이의 경쟁 요소가 없으며, 회사는 이용자의 기록을 다른 이용자와 비교하여 표시하지 않습니다.</p>
+</section>
+
+<section class="art">
+  <h2><span class="num">제9조</span> 기록의 저장과 소실</h2>
+  <ol class="clauses">
+    <li>이용자의 기록은 원칙적으로 이용자 기기의 저장소에 보관됩니다.</li>
+    <li>다음의 경우 기록이 복구되지 않을 수 있으며, 회사의 고의 또는 과실이 없는 한 회사는 이에 대해 책임을 지지 않습니다.
+      <ul class="sub">
+        <li>이용자가 토스 앱 또는 미니앱의 저장 데이터를 삭제한 경우</li>
+        <li>기기를 변경하거나 초기화한 경우</li>
+        <li>운영체제 또는 브라우저가 저장소를 정리한 경우</li>
+      </ul>
+    </li>
+    <li>회사가 기록의 백업이나 기기 간 이전 기능을 제공하는 경우 그 범위와 방법을 서비스 화면에 안내합니다.</li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제10조</span> 이용자의 의무</h2>
+  <ol class="clauses">
+    <li>이용자는 다음 각 호의 행위를 하여서는 안 됩니다.
+      <ul class="sub">
+        <li>타인의 정보를 도용하거나 허위 정보를 등록하는 행위</li>
+        <li>서비스의 정상적인 운영을 방해하는 행위</li>
+        <li>회사 또는 제3자의 지식재산권을 침해하는 행위</li>
+        <li>자동화된 수단으로 서비스에 접근하거나 데이터를 수집하는 행위</li>
+        <li>그 밖에 관련 법령 또는 이 약관에 위배되는 행위</li>
+      </ul>
+    </li>
+    <li>이용자는 자신의 토스 계정 관리에 필요한 주의를 다하여야 합니다.</li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제11조</span> 서비스의 변경 및 중단</h2>
+  <ol class="clauses">
+    <li>회사는 운영상·기술상 필요에 따라 제공 중인 서비스의 전부 또는 일부를 변경할 수 있습니다.</li>
+    <li>회사는 정기점검, 설비 보수, 천재지변 등 부득이한 사유가 있는 경우 서비스 제공을 일시 중단할 수 있으며 사전에 공지합니다. 사전 공지가 불가능한 경우에는 사후에 공지합니다.</li>
+    <li>회사는 사업 종료 등의 사유로 서비스를 종료할 수 있으며, 이 경우 종료일 30일 전까지 공지합니다.</li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제12조</span> 이용계약의 해지</h2>
+  <ol class="clauses">
+    <li>이용자는 언제든지 서비스 내 탈퇴 기능 또는 아래 문의처를 통해 이용계약을 해지할 수 있습니다.</li>
+    <li>해지 시 회사가 보유한 이용자의 개인정보는 개인정보처리방침에 따라 지체 없이 파기되며, 기기에 저장된 기록은 복구되지 않습니다.</li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제13조</span> 지식재산권</h2>
+  <ol class="clauses">
+    <li>서비스에 포함된 캐릭터·이미지·문구·디자인 등 저작물에 대한 권리는 회사에 귀속됩니다.</li>
+    <li>이용자가 서비스에 입력한 기록에 대한 권리는 이용자에게 있습니다.</li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제14조</span> 책임의 제한</h2>
+  <ol class="clauses">
+    <li>회사는 천재지변 또는 이에 준하는 불가항력, 토스 앱이나 통신사업자의 장애로 서비스를 제공할 수 없는 경우 그 책임이 면제됩니다.</li>
+    <li>회사는 이용자가 서비스를 통해 얻은 정보를 근거로 내린 소비 및 재무 결정의 결과에 대하여 책임을 지지 않습니다.</li>
+    <li>회사는 무상으로 제공되는 서비스와 관련하여 이용자에게 발생한 손해에 대하여 회사의 고의 또는 중대한 과실이 없는 한 책임을 지지 않습니다.</li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제15조</span> 준거법 및 관할</h2>
+  <ol class="clauses">
+    <li>이 약관은 대한민국 법률에 따라 규율되고 해석됩니다.</li>
+    <li>서비스 이용과 관련하여 회사와 이용자 사이에 분쟁이 발생한 경우 「민사소송법」에 따른 관할 법원에 소를 제기합니다.</li>
+  </ol>
+</section>
+
+<section class="art">
+  <h2><span class="num">제16조</span> 사업자 정보 및 문의처</h2>
+  <div class="card">
+    <dl>
+      <dt>상호</dt><dd>윈코드_와이제이</dd>
+      <dt>대표자</dt><dd>신윤지</dd>
+      <dt>사업자등록번호</dt><dd>744-05-03698</dd>
+      <dt>주소</dt><dd><span class="fill">사업장 주소</span></dd>
+      <dt>문의</dt><dd><span class="fill">support@example.com</span></dd>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <h2>부칙</h2>
+  <p>이 약관은 2026년 9월 2일부터 시행합니다.</p>
+  <nav class="docnav"><a href="./privacy.html">개인정보 수집 및 이용 동의 보기 &rarr;</a></nav>
+</footer>
+
+</div>
+</body>
+</html>
